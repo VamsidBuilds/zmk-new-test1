@@ -2,12 +2,6 @@
     default_layout: default_layout {
         compatible = "zmk,physical-layout";
         display-name = "Vamsi Default Layout";
-
-        keys = <
-            &kscan 0 0 &kscan 0 1 &kscan 0 2 &kscan 0 3
-            &kscan 1 0 &kscan 1 1 &kscan 1 2 &kscan 1 3
-            &kscan 2 0 &kscan 2 1 &kscan 2 2 &kscan 2 3
-            &kscan 3 0 &kscan 3 1 &kscan 3 2 &kscan 3 3
-        >;
+        transform = <&default_transform>;  // REQUIRED
     };
 };
