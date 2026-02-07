@@ -1,0 +1,23 @@
+# Metadata for the Vamsi keyboard/shield
+# See: https://zmk.dev/docs/development/hardware-integration/hardware-metadata-files
+
+file_format: "1"      # required
+id: vamsi             # internal ID
+name: vamsi           # display name
+type: shield          # since your PCB is a shield
+
+# Optional URL for your keyboard documentation
+url: https://example.com  # replace with your real doc if available
+
+# Features your keyboard supports
+features:
+  - keys                 # required for key scanning
+  - rotary-encoder       # your EC11
+  - rgb-underglow        # RGB LEDs
+  - battery              # battery powered
+  - usb                  # USB support
+  - ble                  # Bluetooth support
+
+# Boards this shield works with
+requires:
+  - nice_nano_v2         # your controller board

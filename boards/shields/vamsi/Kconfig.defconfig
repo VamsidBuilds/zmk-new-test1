@@ -1,0 +1,6 @@
+if SHIELD_VAMSI
+
+config ZMK_KEYBOARD_NAME
+    default "vamsi"
+
+endif # SHIELD_VAMSI
