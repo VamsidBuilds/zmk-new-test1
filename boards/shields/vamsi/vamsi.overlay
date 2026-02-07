@@ -3,7 +3,7 @@
 
 / {
     chosen {
-        zmk,kscan = &kscan0;
+        zmk,kscan = &kscan;
         zmk,matrix_transform = &default_transform;
         zmk,physical-layout = &default_layout;
     };
@@ -11,7 +11,7 @@
     /* -------------------------
        Key Matrix
        ------------------------- */
-    kscan0: kscan {
+    kscan: kscan {   /* renamed from kscan0 to kscan */
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         wakeup-source;
@@ -64,25 +64,5 @@
     sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder>;
-    };
-
-    /* -------------------------
-       RGB Underlight
-       ------------------------- */
-    rgb0: rgb_leds {
-        compatible = "zmk,ws2812";
-        pin = <&gpio1 1>;
-        num_leds = <4>;
-        label = "RGB Underlight";
-    };
-
-    /* -------------------------
-       Battery measurement
-       ------------------------- */
-    battery: battery {
-        compatible = "zmk,battery";
-        adc = <&adc0 4>;
-        full_mv = <4200>;
-        empty_mv = <3000>;
     };
 };
