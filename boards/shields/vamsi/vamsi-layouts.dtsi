@@ -1,5 +1,4 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <physical_layouts.dtsi>
 
 / {
     default_layout: default_layout {
@@ -9,10 +8,10 @@
         kscan = <&kscan>;
 
         keys = <
-            &key_physical_attrs 100 100 0 0 0 0 0
-            , &key_physical_attrs 100 100 100 0 0 0 0
-            , &key_physical_attrs 100 100 0 100 0 0 0
-            , &key_physical_attrs 100 100 100 100 0 0 0
+            100 100 0 0 0 0 0
+            100 100 100 0 0 0 0
+            100 100 0 100 0 0 0
+            100 100 100 100 0 0 0
         >;
     };
 };
