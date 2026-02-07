@@ -10,25 +10,24 @@
 
     /* -------------------------
        Key Matrix
-       Replace GPIO numbers with your actual wiring
        ------------------------- */
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";  /* or row2col if your PCB uses that */
+        diode-direction = "col2row";
         wakeup-source;
 
         col-gpios = <
-            &gpio0 31 GPIO_ACTIVE_HIGH,
-            &gpio0 30 GPIO_ACTIVE_HIGH,
-            &gpio0 29 GPIO_ACTIVE_HIGH,
+            &gpio0 31 GPIO_ACTIVE_HIGH
+            &gpio0 30 GPIO_ACTIVE_HIGH
+            &gpio0 29 GPIO_ACTIVE_HIGH
             &gpio0 28 GPIO_ACTIVE_HIGH
         >;
 
         row-gpios = <
-            &gpio0 12  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN),
-            &gpio0 23  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN),
-            &gpio0 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN),
-            &gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+            &gpio0 12  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+            &gpio0 23  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+            &gpio0 21  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+            &gpio0 19  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
         >;
 
         debounce-press-ms = <5>;
@@ -37,7 +36,6 @@
 
     /* -------------------------
        Matrix Transform
-       Maps physical keys to logical positions
        ------------------------- */
     default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
@@ -53,13 +51,12 @@
 
     /* -------------------------
        Rotary Encoder (EC11)
-       Replace pins with your actual encoder pins
        ------------------------- */
     left_encoder: encoder_left {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         b-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-        pin-sw = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; /* optional push button */
+        pin-sw = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         steps = <24>;
         status = "okay";
     };
@@ -71,23 +68,21 @@
 
     /* -------------------------
        RGB Underlight
-       Replace with your actual pin and number of LEDs
        ------------------------- */
     rgb0: rgb_leds {
         compatible = "zmk,ws2812";
         pin = <&gpio1 1>;
-        num_leds = <4>;  /* change to actual count */
+        num_leds = <4>;
         label = "RGB Underlight";
     };
 
     /* -------------------------
        Battery measurement
-       Replace adc0 pin with your ADC pin
        ------------------------- */
     battery: battery {
         compatible = "zmk,battery";
-        adc = <&adc0 4>;  /* change to your ADC channel */
-        full_mv = <4200>; /* fully charged voltage */
-        empty_mv = <3000>; /* empty voltage */
+        adc = <&adc0 4>;
+        full_mv = <4200>;
+        empty_mv = <3000>;
     };
 };
