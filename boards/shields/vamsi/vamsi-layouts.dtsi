@@ -1,6 +1,7 @@
 / {
     default_layout: default_layout {
         compatible = "zmk,physical-layout";
+        display-name = "Vamsi Default Layout";
 
         keys = <
             &kscan 0 0 &kscan 0 1 &kscan 0 2 &kscan 0 3
