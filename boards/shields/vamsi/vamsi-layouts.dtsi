@@ -1,23 +1,12 @@
-#include <dt-bindings/zmk/matrix_transform.h>
-#include <zmk/physical_layouts.dtsi>
-
 / {
-    key_attrs_1: key_attrs_1 {
-        compatible = "zmk,physical-key-attributes";
-        // You can define key attributes here if needed
-    };
-
     default_layout: default_layout {
         compatible = "zmk,physical-layout";
-        display-name = "Vamsi Layout";
-        transform = <&default_transform>;
-        kscan = <&kscan>;
 
         keys = <
-            &key_attrs_1 100 100 0 0 0 0 0
-            &key_attrs_1 100 100 100 0 0 0 0
-            &key_attrs_1 100 100 0 100 0 0 0
-            &key_attrs_1 100 100 100 100 0 0 0
+            &kscan 0 0 &kscan 0 1 &kscan 0 2 &kscan 0 3
+            &kscan 1 0 &kscan 1 1 &kscan 1 2 &kscan 1 3
+            &kscan 2 0 &kscan 2 1 &kscan 2 2 &kscan 2 3
+            &kscan 3 0 &kscan 3 1 &kscan 3 2 &kscan 3 3
         >;
     };
 };
